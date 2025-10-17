@@ -15,12 +15,34 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
+
+
+import java.util.Date;//fecha
+import java.util.TimeZone;//Zonas horarias
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+
+
 /**
  *
  * @author David
  */
 public class menuPrincipal {
     private static EmailAccount cuentaLogged;
+    
+    //Obtencion de fechas
+    private LocalDate hoy = LocalDate.now();
+    DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    String fechaFormateada = hoy.format(formateador);
+    
+    //Obtencion de hora
+    private Date hora = new Date();
+    SimpleDateFormat formateoHora = new SimpleDateFormat("hh:mm:ss a");
+    String horaFormateada = formateoHora.format(hora);
+    
     
     public menuPrincipal(EmailAccount cuentaLogged){
         this.cuentaLogged= cuentaLogged;
@@ -33,17 +55,19 @@ public class menuPrincipal {
         screen.setLocationRelativeTo(null);
         screen.setLayout(null);
         
+        
+        //Creacion de tags
         JLabel titulo= new JLabel("Menu Principal");
         JLabel userlabel = new JLabel("Usuario:");
-        JLabel fechalabel = new JLabel("Fecha:");
-        JLabel horaLabel = new JLabel("Hora:");
+        JLabel fechalabel = new JLabel("Fecha: "+fechaFormateada);
+        JLabel horaLabel = new JLabel("Hora: "+horaFormateada);
         titulo.setBounds(100, 5, 500, 200);
         titulo.setFont(new Font("Serif", Font.BOLD, 50));
         userlabel.setBounds(100, 50, 500, 200);
         userlabel.setFont(new Font("Serif", Font.BOLD, 25));
         fechalabel.setBounds(100, 100, 200, 200);
         fechalabel.setFont(new Font("Serif", Font.BOLD, 15));
-        horaLabel.setBounds(180,100 , 200, 200);
+        horaLabel.setBounds(250,100 , 200, 200);
         horaLabel.setFont(new Font("Serif", Font.BOLD, 15));
         
         JButton btViewInbox = new JButton("Ver Inbox");
