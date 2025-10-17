@@ -96,6 +96,41 @@ public class menuPrincipal {
                     
         });
         
+        
+          btSend.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              
+          }
+                    
+        });
+        
+        btLeer.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              ;
+          }
+                    
+        });
+        
+        btLimpiar.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              ;
+          }
+                    
+        });
+        
+        
+        btBuscar.addActionListener(new ActionListener(){
+          @Override 
+          public void actionPerformed(ActionEvent e){
+              ;
+          }
+                    
+        });
+        
+        
         btSend.addActionListener(new ActionListener(){
           @Override 
           public void actionPerformed(ActionEvent e){

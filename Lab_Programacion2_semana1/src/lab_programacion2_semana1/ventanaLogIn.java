@@ -72,9 +72,11 @@ public class ventanaLogIn {
               for(EmailAccount cuenta: cuentas){
                   String email = cuenta.getDireccionEmail();
                   String contra = cuenta.getpassword();
+                  
                   if(email.equals(correo)&& contra.equals(password)){
                       JOptionPane.showMessageDialog(screen, "Inicio de sesion exitozo");
-                      menuPrincipal menu = new menuPrincipal(actual, cuentas);
+                      
+                      menuPrincipal menu = new menuPrincipal(cuenta, cuentas);
                       screen.dispose();
                   }
                      
