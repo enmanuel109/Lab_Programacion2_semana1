@@ -58,7 +58,7 @@ public class EmailAccount {
                 inbox[i].print();
                inbox[i].getLeido();
             }else{
-            System.out.println("Correo no existe");
+            System.out.println("Correo no existe.");
             }
         }
     }
