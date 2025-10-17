@@ -13,6 +13,7 @@ public class EmailAccount {
     String password;
     String nombreUsuario;
     email[] imbox;
+    int contar = 0;
 
     public EmailAccount(String direccionEmail, String password, String nombreUsuario) {
         this.direccionEmail = direccionEmail;
@@ -33,7 +34,16 @@ public class EmailAccount {
         return nombreUsuario;
     } 
     
-    
+    public email recibirEmail(email em){
+        for(email tem: imbox){
+            if(tem==null && contar<imbox.length){
+                imbox[contar]= new email(em);
+                contar++;
+                return true
+            }
+        }
+        return false;
+    }
     public void printInbox(){
     
         
