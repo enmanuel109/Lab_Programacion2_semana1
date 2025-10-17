@@ -22,6 +22,10 @@ public class email {
         this.fechaEnvio = Calendar.getInstance();
     }
 
+    public email() {
+
+    }
+
     public String getEmisor() {
         return emisor;
     }
@@ -38,14 +42,9 @@ public class email {
         return leido;
     }
 
-    public void leido() {
-        if (!leido) {
-            leido = true;
-            System.out.println("LEIDO");
-        }else{
-            System.out.println("SIN LEER");
-        }
-        
+    public boolean leido() {
+        leido = true;
+        return leido;
     }
 
     public Calendar getFechaEnvio() {
