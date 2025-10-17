@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  */
 public class JavaLook {
     private static EmailAccount[] cuentas= new EmailAccount[200];
-    EmailAccount cuentaActual;
+    private static EmailAccount cuentaActual;
     
     public JavaLook(){
        
@@ -21,7 +21,7 @@ public class JavaLook {
     
     
     public static void main(String[] args) {
-        menuInicial ventana = new menuInicial(cuentas);
+        menuInicial ventana = new menuInicial(cuentas, cuentaActual);
     }
     
     //Metodo para busqueda de cuentas en array de cuentas

@@ -19,9 +19,10 @@ public class menuInicial {
    //Creacion de Jframe
     
     private static EmailAccount[] cuentas;
+    private static EmailAccount actual;
     
-    
-    public menuInicial(EmailAccount[] cuentas){
+    public menuInicial(EmailAccount[] cuentas, EmailAccount actual){
+        this.actual=actual;
         this.cuentas= cuentas;
         JFrame screen = new JFrame();
         screen.setSize(1000, 800);  //Tamaño standard para menus
@@ -47,7 +48,8 @@ public class menuInicial {
         botonLogin.addActionListener(new ActionListener(){
           @Override 
           public void actionPerformed(ActionEvent e){
-              
+              screen.dispose();
+              ventanaLogIn ventana = new ventanaLogIn(cuentas, actual);
           }
                     
         });
@@ -56,7 +58,7 @@ public class menuInicial {
           @Override 
           public void actionPerformed(ActionEvent e){
               screen.dispose();
-              windowNewAccount ventanaLog= new windowNewAccount(cuentas);
+              windowNewAccount ventanaLog= new windowNewAccount(cuentas,actual);
           }
                     
         });
@@ -88,7 +90,7 @@ public class menuInicial {
     
     
     public static void main(String[] args) {
-        menuInicial ventana= new menuInicial(cuentas);
+        menuInicial ventana= new menuInicial(cuentas, actual);
     }
        
     

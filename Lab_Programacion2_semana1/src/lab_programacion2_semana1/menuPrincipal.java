@@ -108,7 +108,7 @@ public class menuPrincipal {
           @Override 
           public void actionPerformed(ActionEvent e){
               screen.dispose();
-              menuInicial menuInicial = new menuInicial(cuentas);
+              menuInicial menuInicial = new menuInicial(cuentas,cuentaLogged);
           }
                     
         });

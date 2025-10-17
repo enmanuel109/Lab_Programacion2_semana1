@@ -19,8 +19,10 @@ import javax.swing.JTextField;
  */
 public class windowNewAccount {
     private static EmailAccount[] cuentas;
+    private static EmailAccount actual;
     
-    public windowNewAccount(EmailAccount[] cuentas){
+    public windowNewAccount(EmailAccount[] cuentas, EmailAccount actual){
+        this.actual=actual;
         this.cuentas=cuentas;
         JFrame screen = new JFrame();
         screen.setSize(500, 600);  //Tamaño standard para menus
@@ -63,22 +65,33 @@ public class windowNewAccount {
          newCuenta.addActionListener(new ActionListener(){
           @Override 
           public void actionPerformed(ActionEvent e){
+              //Obtencion de informacion
                String password;
                String nombre;
                 String correo; 
               password=psswInput.getText();
               nombre=nameInput.getText();
               correo=emailInput.getText();
-              boolean revisionCorreo= revisarCorreo(correo);
-              boolean revisarContra= revisarContrasenia(password);
               
-              if(revisionCorreo==true && revisarContra == true){
-                  JOptionPane.showMessageDialog(screen, "Se ha creado la cuenta de manera exitosa");
-              }else{
-                  JOptionPane.showMessageDialog(screen, "Porfavor verificar los parametros");
+              
+              EmailAccount cuentaNueva= new EmailAccount(correo, password, nombre);
+              for(int i=0; i<cuentas.length; i++){
+                  if(cuentas[0]==null){
+                      cuentas[i]= cuentaNueva;
+                      JOptionPane.showMessageDialog(screen, "Se ha crerado la cuenta de manera exitosa");
+                      emailInput.setText("");
+                      nameInput.setText("");
+                      psswInput.setText("");
+                      break;
+                  }else if(cuentas[i]!=null){
+                      cuentas[i]= cuentaNueva;
+                      JOptionPane.showMessageDialog(screen, "Se ha crerado la cuenta de manera exitosa");
+                      emailInput.setText("");
+                      nameInput.setText("");
+                      psswInput.setText("");
+                      break;
+                  }
               }
-              
-              
           }
                     
         });
@@ -90,7 +103,7 @@ public class windowNewAccount {
           @Override 
           public void actionPerformed(ActionEvent e){
               screen.dispose();
-              menuInicial ventanaAnt = new menuInicial(cuentas);
+              menuInicial ventanaAnt = new menuInicial(cuentas, actual);
           }
                     
         });
@@ -110,7 +123,7 @@ public class windowNewAccount {
     
     
     public static void main(String[] args) {
-        windowNewAccount ventana = new windowNewAccount(cuentas);
+        windowNewAccount ventana = new windowNewAccount(cuentas,actual);
     }
     
     
