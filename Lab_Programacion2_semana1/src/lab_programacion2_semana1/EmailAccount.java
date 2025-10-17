@@ -12,14 +12,14 @@ public class EmailAccount {
     String direccionEmail;
     String password;
     String nombreUsuario;
-    email[] imbox;
+    email[] inbox;
     int contar = 0;
 
     public EmailAccount(String direccionEmail, String password, String nombreUsuario) {
         this.direccionEmail = direccionEmail;
         this.password = password;
         this.nombreUsuario = nombreUsuario;
-        this.imbox = null;
+        this.inbox = new email[10];
     }
 
     public String getDireccionEmail() {
@@ -34,18 +34,17 @@ public class EmailAccount {
         return nombreUsuario;
     } 
     
-    public email recibirEmail(email em){
-        for(email tem: imbox){
-            if(tem==null && contar<imbox.length){
-                imbox[contar]= new email(em);
-                contar++;
-                return true
+    public boolean recibirEmail(email em){
+        for(int i=0;i<inbox.length;i++){
+            if(inbox[i]==null){
+                inbox[i]=em;
+                return true;
             }
         }
         return false;
     }
-    public void printInbox(){
     
-        
+    public void printInbox(){
+       
     }
 }
