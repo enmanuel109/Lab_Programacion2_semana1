@@ -99,6 +99,11 @@ public class EmailAccount {
 
         mostrarCorreos(index + 1);
     }
+    
+    
+    public email[]  getInbox(){
+        return inbox;
+    }
 
     public void EliminarCorreoLeidos(int index) {
         if (inbox.length <= index) {

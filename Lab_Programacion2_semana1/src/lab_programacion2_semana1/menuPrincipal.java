@@ -88,10 +88,16 @@ public class menuPrincipal {
         
         
         
+        JTextField inboxPequenio = new JTextField();
+        //inboxPequenio.setEditable(false);
+        inboxPequenio.setBounds(100, 250, 500, 500);
+        
         btViewInbox.addActionListener(new ActionListener(){
           @Override 
           public void actionPerformed(ActionEvent e){
-              ;
+              String header = "EMISOR |          ASUNTO          |          ESTADO          |          FECHA";
+              
+              inboxPequenio.setText(header);
           }
                     
         });
@@ -149,8 +155,6 @@ public class menuPrincipal {
         });
         
      
-        JTextField inboxPequenio = new JTextField();
-        inboxPequenio.setBounds(100, 250, 500, 500);
         
         
         
