@@ -14,7 +14,7 @@ public class EmailAccount {
     String nombreUsuario;
     email[] inbox;
     int contar = 0;
-
+    
     public EmailAccount(String direccionEmail, String password, String nombreUsuario) {
         this.direccionEmail = direccionEmail;
         this.password = password;
@@ -43,11 +43,24 @@ public class EmailAccount {
         }
         return false;
     }
-    
+        
     public void printInbox(){
         for(int i =0; i<inbox.length;i++){
         System.out.println("Posicion:"+inbox[i]+" Emisor:"+ inbox[i].getEmisor()+ " Asunto:"+ inbox[i].getAsunto()+  inbox[i].getLeido());
-            System.out.println("");
+            System.out.println("Todos los correos: ");
+            System.out.println("Sin leer: ");
         }
     }
+    
+    public void leerEmail(int pos){
+     for(int i=0;i<inbox.length;i++){
+            if(inbox[i]!=null){
+                inbox[i].print();
+               inbox[i].getLeido();
+            }else{
+            System.out.println("Correo no existe");
+            }
+        }
+    }
+    
 }

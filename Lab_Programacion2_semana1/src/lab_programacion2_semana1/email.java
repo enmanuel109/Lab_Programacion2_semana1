@@ -22,6 +22,9 @@ public class email {
         this.fechaEnvio = Calendar.getInstance();
     }
 
+    public email(){
+        
+    }
     public String getEmisor() {
         return emisor;
     }
