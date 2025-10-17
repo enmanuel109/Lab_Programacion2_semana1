@@ -18,11 +18,11 @@ import javax.swing.JLabel;
 public class menuInicial {
    //Creacion de Jframe
     
-    private static EmailAccount cuentaLogged;
+    private static EmailAccount[] cuentas;
     
     
-    public menuInicial(EmailAccount cuentaLogged){
-        this.cuentaLogged= cuentaLogged;
+    public menuInicial(EmailAccount[] cuentas){
+        this.cuentas= cuentas;
         JFrame screen = new JFrame();
         screen.setSize(1000, 800);  //Tamaño standard para menus
         screen.setResizable(false);
@@ -47,7 +47,7 @@ public class menuInicial {
         botonLogin.addActionListener(new ActionListener(){
           @Override 
           public void actionPerformed(ActionEvent e){
-              System.out.println("Empieza proceso de Login");
+              
           }
                     
         });
@@ -55,7 +55,8 @@ public class menuInicial {
         botonNewAccount.addActionListener(new ActionListener(){
           @Override 
           public void actionPerformed(ActionEvent e){
-              System.out.println("Empieza proceso de Crear cuenta");
+              screen.dispose();
+              windowNewAccount ventanaLog= new windowNewAccount(cuentas);
           }
                     
         });
@@ -87,7 +88,7 @@ public class menuInicial {
     
     
     public static void main(String[] args) {
-        menuInicial ventana= new menuInicial(cuentaLogged);
+        menuInicial ventana= new menuInicial(cuentas);
     }
        
     

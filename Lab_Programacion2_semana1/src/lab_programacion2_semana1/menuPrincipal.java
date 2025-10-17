@@ -32,7 +32,7 @@ import java.util.Calendar;
  */
 public class menuPrincipal {
     private static EmailAccount cuentaLogged;
-    
+    private static EmailAccount[] cuentas;
     //Obtencion de fechas
     private LocalDate hoy = LocalDate.now();
     DateTimeFormatter formateador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -44,9 +44,9 @@ public class menuPrincipal {
     String horaFormateada = formateoHora.format(hora);
     
     
-    public menuPrincipal(EmailAccount cuentaLogged){
+    public menuPrincipal(EmailAccount cuentaLogged, EmailAccount[] cuentas){
         this.cuentaLogged= cuentaLogged;
-        
+        this.cuentas = cuentas;
         
         JFrame screen = new JFrame();
         screen.setSize(1000, 800);  //Tamaño standard para menus
@@ -108,7 +108,7 @@ public class menuPrincipal {
           @Override 
           public void actionPerformed(ActionEvent e){
               screen.dispose();
-              menuInicial menuInicial = new menuInicial(cuentaLogged);
+              menuInicial menuInicial = new menuInicial(cuentas);
           }
                     
         });
@@ -141,7 +141,7 @@ public class menuPrincipal {
     
     
     public static void main(String[] args) {
-        menuPrincipal ventana = new menuPrincipal(cuentaLogged);
+        menuPrincipal ventana = new menuPrincipal(cuentaLogged, cuentas);
     }
     
 }

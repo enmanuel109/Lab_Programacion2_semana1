@@ -11,19 +11,17 @@ import javax.swing.JFrame;
  * @author David
  */
 public class JavaLook {
-    EmailAccount[] cuentas;
+    private static EmailAccount[] cuentas= new EmailAccount[200];
     EmailAccount cuentaActual;
     
     public JavaLook(){
-        //Primera clase que se ejecuta
-        //Crea el almacenador de cuentas
-        cuentas= new EmailAccount[200];
+       
         
-        //Ejecutar de pestania menu incial aqui
-        //Desarrollar el menu con una cuenta como parametro
-        
-        
-        
+    }
+    
+    
+    public static void main(String[] args) {
+        menuInicial ventana = new menuInicial(cuentas);
     }
     
     //Metodo para busqueda de cuentas en array de cuentas
