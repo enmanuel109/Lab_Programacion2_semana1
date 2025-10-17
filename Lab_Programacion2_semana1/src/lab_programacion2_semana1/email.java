@@ -41,13 +41,9 @@ public class email {
     public boolean getLeido() {
         return leido;
     }
-    
-    public void setLeido(boolean leido){
-        if(leido){
-            System.out.println("LEIDO");
-        }else{
-            System.out.println("SIN LEER");
-        }
+
+    public void setLeido(boolean leido) {
+        this.leido = leido;
     }
 
     public boolean leido() {
@@ -64,7 +60,14 @@ public class email {
         System.out.println("Asunto:  " + asunto);
         System.out.println("Contenido:  " + contenido);
         System.out.println("Fecha:  " + fechaEnvio);
-        System.out.println("Estado:  " + setLeido(leido));
+
+        String estado;
+        if (this.leido) {
+            estado = "LEIDO";
+        } else {
+            estado = "SIN LEER";
+        }
+        System.out.println("Estado:  " + estado);
     }
 
 }
