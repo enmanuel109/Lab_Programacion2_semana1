@@ -46,7 +46,8 @@ public class EmailAccount {
     
     public void printInbox(){
         for(int i =0; i<inbox.length;i++){
-        System.out.println("Posicion:"+inbox[i]+" Emisor:"+ in);
+        System.out.println("Posicion:"+inbox[i]+" Emisor:"+ inbox[i].getEmisor()+ " Asunto:"+ inbox[i].getAsunto()+  inbox[i].getLeido());
+            System.out.println("");
         }
     }
 }
