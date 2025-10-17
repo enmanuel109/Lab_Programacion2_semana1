@@ -42,6 +42,8 @@ public class email {
         if (!leido) {
             leido = true;
             System.out.println("LEIDO");
+        }else{
+            System.out.println("SIN LEER");
         }
     }
 

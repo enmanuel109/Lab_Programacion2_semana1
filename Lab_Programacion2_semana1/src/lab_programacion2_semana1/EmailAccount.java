@@ -32,10 +32,6 @@ public class EmailAccount {
     public String getnombreUsuario(){
         return nombreUsuario;
     } 
-    
-    
-    public void printInbox(){
-    
-        
-    }
+
+    public x|x
 }
