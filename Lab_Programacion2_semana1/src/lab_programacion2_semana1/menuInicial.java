@@ -22,8 +22,8 @@ public class menuInicial {
     
     
     public menuInicial(EmailAccount cuentaLogged){
-        JFrame screen = new JFrame();
         this.cuentaLogged= cuentaLogged;
+        JFrame screen = new JFrame();
         screen.setSize(1000, 800);  //Tamaño standard para menus
         screen.setResizable(false);
         screen.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,6 +67,10 @@ public class menuInicial {
           }
                     
         });
+        
+        
+        
+        
         
         
         
